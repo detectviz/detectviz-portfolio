@@ -16,6 +16,7 @@ export interface Props {
 
 const lang = Astro.props.lang || Astro.currentLocale;
 const base = import.meta.env.BASE_URL;
+const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
 
 // Use translated strings for default title and description
 const {
@@ -33,8 +34,8 @@ const {
     <title>{title}</title>
 
     <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
-    <link rel="apple-touch-icon" href={`${base}/apple-touch-icon.png`} />
+    <link rel="icon" type="image/svg+xml" href={`${cleanBase}/favicon.svg`} />
+    <link rel="apple-touch-icon" href={`${cleanBase}/apple-touch-icon.png`} />
 
     <!-- Canonical URL -->
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site!).href} />

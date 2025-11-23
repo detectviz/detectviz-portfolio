@@ -9,6 +9,7 @@ interface Props {
 const { lang } = Astro.props;
 const currentYear = new Date().getFullYear();
 const base = import.meta.env.BASE_URL;
+const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
 ---
 
 <footer class="py-8 bg-surface border-t border-outlineVariant">
@@ -16,7 +17,7 @@ const base = import.meta.env.BASE_URL;
     <div class="flex flex-col md:flex-row justify-between items-center">
       <div class="mb-4 md:mb-0">
         <a href={base} class="block" aria-label="Homepage">
-          <img src={`${base}/logo/logo-dv-circle.svg`} alt={name + " Logo"} class="h-8 w-auto" />
+          <img src={`${cleanBase}/logo/logo-dv-circle.svg`} alt={name + " Logo"} class="h-8 w-auto" />
         </a>
       </div>
 

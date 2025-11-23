@@ -8,6 +8,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
 ---
 
 <section id="certificates" class="py-16 md:py-24 bg-background">
@@ -32,7 +33,7 @@ const base = import.meta.env.BASE_URL;
           <div class="flex flex-col items-center text-center">
             <div class="w-20 h-20 mb-4 flex items-center justify-center">
               <img
-                src={`${base}${cert.badge}`}
+                src={`${cleanBase}${cert.badge}`}
                 alt={cert.title}
                 class="max-w-full max-h-full object-contain"
               />
