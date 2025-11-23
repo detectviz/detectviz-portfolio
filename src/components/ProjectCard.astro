@@ -11,8 +11,9 @@ const {
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL;
+const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
 const coverImage = images && images.length > 0 ? images[0] : '';
-const imagePath = coverImage.startsWith('http') ? coverImage : `${base}/images/projects/${id}/${coverImage}`;
+const imagePath = coverImage.startsWith('http') ? coverImage : `${cleanBase}/images/projects/${id}/${coverImage}`;
 ---
 
 <article class="flex flex-col bg-transparent gap-2 overflow-hidden h-full">
