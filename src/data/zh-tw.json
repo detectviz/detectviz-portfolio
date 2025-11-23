@@ -1,0 +1,146 @@
+{
+  "site": {
+    "title": "DetectViz - 作品集",
+    "description": "DetectViz 的專業作品集網站，展示 SRE、數據工程與可觀測性領域的專案經驗與技術能力。"
+  },
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "contactButton": "聯絡我"
+  },
+  "hero": {
+    "greeting": "你好，我是",
+    "name": "林宜欣",
+    "pitch": "具備 3 年軟體開發與 SRE 實戰經驗，從零到一打造並導入了企業級的自動化監控平台。",
+    "role": "SRE / 數據工程師",
+    "ctaProjects": "查看專案",
+    "ctaAbout": "關於我"
+  },
+  "about": {
+    "title": "關於我",
+    "paragraph1": "具備 3 年軟體開發與 SRE 實戰經驗，從零到一打造並導入了企業級的自動化監控平台。我熱衷於運用開源軟體 (如 Grafana Stack, CNCF 項目) 來設計與建構高可用性、可擴展的基礎設施，並將設計背景的視覺化思維，應用於打造直觀、易讀的 Grafana 儀表板，深信好的工具與設計能讓數據自己說話。",
+    "paragraph2": "比起從頭造輪子，我更享受站在巨人的肩膀上，透過整合、優化現有的開源解決方案，為團隊帶來最高的價值。我具備獨立完成專案迭代的能力，從腳本開發、CI/CD 部署到收集用戶反饋，持續優化，確保系統的高可用性與維運效率。"
+  },
+  "values": {
+    "title": "Specialty",
+    "subtitle": "結合技術能力與設計背景，打造具有視覺吸引力且內容豐富的個人作品集。",
+    "card1Title": "技術與設計雙重專長",
+    "card1Text": "3 年 SRE/數據工程經驗 + 設計背景，將視覺化思維應用於打造直觀、易讀的 Grafana 儀表板。",
+    "card2Title": "開源優先思維",
+    "card2Text": "活用 Grafana Stack、CNCF 等開源工具，設計高可用性、可擴展的基礎設施。",
+    "card3Title": "量化成果展示",
+    "card3Text": "每日數億筆數據處理、50+ 儀表板設計、80% 效能提升，讓數據自己說話。"
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "掌握多種工具與技術，構建現代化、高效能的系統。",
+    "clusters": {
+      "frontend": {
+        "title": "監控與可觀測性",
+        "description": "Grafana, InfluxDB, Telegraf, Prometheus"
+      },
+      "design": {
+        "title": "開發與自動化",
+        "description": "Golang, Python, Bash, Docker, Kubernetes, CI/CD"
+      },
+      "tools": {
+        "title": "系統與數據",
+        "description": "Linux, AIX, ETL, SQL, NoSQL"
+      },
+      "management": {
+        "title": "管理與協作",
+        "description": "結構化流程、高效工作流與團隊協作。"
+      }
+    },
+    "category": {
+      "design": "設計",
+      "coding": "開發",
+      "framework": "框架",
+      "deployment": "部署"
+    },
+    "astro": {
+      "description": "靜態網站生成與效能"
+    },
+    "react": {
+      "description": "互動式組件與 UI"
+    },
+    "tailwind": {
+      "description": "實用優先樣式與設計"
+    },
+    "typescript": {
+      "description": "型別安全開發"
+    },
+    "git": {
+      "description": "版本控制與協作"
+    },
+    "vercel": {
+      "description": "部署與託管"
+    }
+  },
+  "projects": {
+    "pageTitle": "專案",
+    "pageDescription": "13 個企業級專案完整展示。",
+    "heroTitle": "Projects",
+    "heroSubtitle": "探索我在 SRE、數據工程與可觀測性領域的專案經驗。",
+    "viewProject": "查看專案",
+    "detailLabels": {
+      "challenge": "挑戰",
+      "approach": "方法",
+      "result": "成果",
+      "technologiesUsed": "使用技術"
+    },
+    "title": "精選專案",
+    "subtitle": "展示具代表性的企業級專案與個人作品。",
+    "astroPortfolio": {
+      "shortDescription": "現代化、多語系的作品集模板，使用 Astro 和 Tailwind CSS 構建。",
+      "challenge": "創建一個高效能、多語系的作品集模板，易於客製化。",
+      "approach": "使用 Astro 實現最佳效能，基於 JSON 的內容管理。",
+      "result": "Lighthouse 評分 100/100，完全響應式，支援多語系。"
+    },
+    "buttonText": "查看 GitHub",
+    "allProjectsButtonText": "查看所有專案",
+    "all": "全部專案"
+  },
+  "timeline": {
+    "title": "Experience",
+    "subtitle": "我的職業生涯與重要里程碑。",
+    "item1Title": "數據工程師",
+    "item1Period": "2022/04 ~ 2025/04",
+    "item1Description": "集先鋒科技有限公司\n主導 Grafana Stack 監控平台設計\n從零到一打造企業級自動化監控平台",
+    "item2Title": "視覺設計師",
+    "item2Period": "2019/08 ~ 2021/06",
+    "item2Description": "三越彩繪標示工程有限公司\n參與長庚醫院與台塑集團標示系統規劃",
+    "item3Title": "學歷",
+    "item3Period": "2015/09 ~ 2017/06",
+    "item3Description": "國立臺北科技大學 工業設計系"
+  },
+  "certificates": {
+    "title": "Certificates",
+    "subtitle": "專業認證與持續學習成果。"
+  },
+  "footerCTA": {
+    "title": "需要協助？",
+    "subtitle": "查看我的 GitHub 專案或直接聯絡我。",
+    "buttonText": "瀏覽 GitHub"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "有任何問題或合作機會？歡迎隨時聯絡！",
+    "emailTitle": "Email",
+    "emailButtonText": "發送 Email",
+    "phoneTitle": "電話",
+    "phoneButtonText": "撥打電話",
+    "githubTitle": "GitHub",
+    "githubButtonText": "查看 Profile",
+    "linkedinTitle": "LinkedIn",
+    "linkedinButtonText": "連結 LinkedIn"
+  },
+  "footer": {
+    "copyright": "版權所有。",
+    "imprint": "版本說明",
+    "privacyPolicy": "隱私權政策"
+  }
+}

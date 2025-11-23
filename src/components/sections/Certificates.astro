@@ -1,0 +1,54 @@
+---
+import { t } from '../../utils/i18n';
+import { certificates } from '../../data/certificates';
+
+interface Props {
+  lang: string | undefined;
+}
+
+const { lang } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<section id="certificates" class="py-16 md:py-24 bg-background">
+  <div class="max-w-container mx-auto px-6">
+    <div class="mb-12 text-center" data-aos="fade-up">
+      <h2 class="font-heading text-h2 text-onSurface mb-4 tracking-wide">{t('certificates.title', lang)}</h2>
+      <p class="text-onSurfaceVariant font-light tracking-wide max-w-2xl mx-auto">
+        {t('certificates.subtitle', lang)}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {certificates.map((cert, index) => (
+        <a
+          href={cert.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group bg-surfaceContainer border border-outlineVariant rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-105 hover:border-primary/30 hover:bg-surfaceContainerHigh block"
+          data-aos="fade-up"
+          data-aos-delay={100 * (index + 1)}
+        >
+          <div class="flex flex-col items-center text-center">
+            <div class="w-20 h-20 mb-4 flex items-center justify-center">
+              <img
+                src={`${base}${cert.badge}`}
+                alt={cert.title}
+                class="max-w-full max-h-full object-contain"
+              />
+            </div>
+            <h3 class="font-heading text-sm text-onSurface mb-2 group-hover:text-primary transition-colors duration-300 line-clamp-2">
+              {cert.title}
+            </h3>
+            <p class="text-xs text-onSurfaceVariant mb-1">
+              {cert.organization}
+            </p>
+            <p class="text-xs text-primary">
+              {cert.date}
+            </p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

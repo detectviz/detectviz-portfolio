@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap');
+
+      .logo-text {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 64px;
+        letter-spacing: -0.02em;
+      }
+      .subtitle {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        fill: #FFFFFF;
+      }
+      .detect { fill: #FFFFFF; }
+      .viz { fill: #CFBDFE; }
+    </style>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#141218;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#211F24;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Main Logo -->
+  <text x="600" y="230" text-anchor="middle" class="logo-text">
+    <tspan class="detect">Detect</tspan><tspan class="viz">Viz</tspan>
+  </text>
+
+  <!-- Subtitle - English -->
+  <text x="600" y="310" text-anchor="middle" class="subtitle">Data Visualization Engineer</text>
+
+  <!-- Subtitle - Chinese -->
+  <text x="600" y="350" text-anchor="middle" class="subtitle">數據視覺化工程師</text>
+
+  <!-- Tech Badges -->
+  <g transform="translate(600, 430)">
+    <!-- Grafana Badge -->
+    <rect x="-240" y="-15" width="150" height="40" rx="8" fill="#4D3D75"/>
+    <text x="-165" y="13" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="400" fill="#FFFFFF">Grafana</text>
+
+    <!-- InfluxDB Badge -->
+    <rect x="-75" y="-15" width="150" height="40" rx="8" fill="#4D3D75"/>
+    <text x="0" y="13" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="400" fill="#FFFFFF">InfluxDB</text>
+
+    <!-- Kubernetes Badge -->
+    <rect x="90" y="-15" width="150" height="40" rx="8" fill="#4D3D75"/>
+    <text x="165" y="13" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="400" fill="#FFFFFF">Kubernetes</text>
+  </g>
+</svg>

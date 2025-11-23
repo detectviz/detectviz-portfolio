@@ -1,0 +1,49 @@
+---
+import { t } from '../../utils/i18n';
+import { skillClusters } from '../../data/skills';
+
+interface Props {
+  lang: string | undefined;
+}
+
+const { lang } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<section id="skills" class="py-16 md:py-24">
+  <div class="max-w-container mx-auto px-6">
+    <div class="mb-8 md:mb-10 text-center" data-aos="fade-up" data-aos-duration="800">
+      <h2 class="font-heading text-h2 text-onSurface mb-4 tracking-wide">{t('skills.title', lang)}</h2>
+      <p class="text-onSurfaceVariant font-light tracking-wide max-w-2xl mx-auto">
+        {t('skills.subtitle', lang)}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      {skillClusters.map((cluster, index) => (
+        <div
+          id={cluster.id}
+          class="skill-cluster bg-surfaceContainer border border-outlineVariant rounded-xl p-6 shadow-sm hover:shadow-md hover:!border-[#8b5cf6] dark:hover:!border-[#a78bfa] transition-all duration-300 hover:bg-surfaceContainerHigh"
+          data-aos="fade-up"
+          data-aos-duration="600"
+          data-aos-delay={index * 150}
+        >
+          <h3 class="font-heading text-xl text-onSurface mb-6 tracking-wide">
+            {cluster.title}
+          </h3>
+
+          <div class="cluster-tools grid grid-cols-3 sm:grid-cols-4 gap-4">
+            {cluster.tools.map((tool) => (
+              <div class="tool-item flex flex-col items-center text-center">
+                <div class="tool-icon bg-surfaceVariant p-3 rounded-lg mb-2">
+                  <img src={`${base}${tool.icon}`} alt={tool.name} class="w-6 h-6" />
+                </div>
+                <p class="text-xs font-medium text-onSurface">{tool.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

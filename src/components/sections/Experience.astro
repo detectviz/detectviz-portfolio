@@ -1,0 +1,103 @@
+---
+import Button from '../ui/Buttons.astro';
+import { t } from '../../utils/i18n';
+
+interface Props {
+  lang: string | undefined;
+}
+
+const { lang } = Astro.props;
+
+const timelineItems = ["item1", "item2", "item3"];
+---
+
+<section id="experience" class="py-16 md:py-24">
+  <div class="max-w-container mx-auto px-6">
+    <div class="mb-12" data-aos="fade-up">
+      <h2 class="font-heading text-h2 text-onSurface mb-4 tracking-wide">{t('timeline.title', lang)}</h2>
+      <p class="text-onSurfaceVariant font-light tracking-wide max-w-2xl">
+        {t('timeline.subtitle', lang)}
+      </p>
+    </div>
+
+    <div id="timeline-container" class="relative"> {/* Added id for GSAP trigger */}
+      <!-- Timeline line -->
+      <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-outlineVariant transform md:translate-x-px"></div>
+
+      <div class="space-y-12">
+        {timelineItems.map((item, index) => (
+          <div
+            class={`relative flex flex-col md:flex-row gap-8 md:gap-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+            data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}
+          >
+            {/* Timeline dot - Added class="timeline-dot" */}
+            <div class="timeline-dot absolute left-0 md:left-1/2 top-0 w-5 h-5 rounded-full bg-primary border-4 border-surface transform -translate-x-2 md:-translate-x-2.5"></div>
+
+            <!-- Content -->
+            <div class="md:w-1/2 pl-10 md:pl-0 md:pr-12 md:text-right">
+              <h3 class="font-heading text-xl text-onSurface mb-1 tracking-wide">{t("timeline." + item + "Title", lang)}</h3>
+              <p class="text-sm text-primary mb-2 tracking-wide">{t("timeline." + item + "Period", lang)}</p>
+              <p class="text-onSurfaceVariant whitespace-pre-line font-light tracking-wide">{t("timeline." + item + "Description", lang)}</p>
+            </div>
+
+            <div class="md:w-1/2 md:pl-12">
+              <!-- Empty div to create the layout on alternating sides -->
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  // Use default imports to avoid named export issues in some bundlers
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+
+  // Explicitly register the plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  function initTimelineAnimation() {
+    const timelineContainer = document.querySelector('#timeline-container');
+    const timelineDots = document.querySelectorAll('.timeline-dot');
+
+    console.log("GSAP Version:", gsap.version);
+    console.log("Timeline container:", timelineContainer);
+    console.log("Timeline dots:", timelineDots.length);
+
+    // Clean up old triggers if they exist to prevent memory leaks or conflicts
+    ScrollTrigger.getAll().forEach(trigger => {
+       // Safely check if trigger.vars exists before accessing properties
+       if (trigger.vars && (trigger.vars.trigger === '#timeline-container' || trigger.vars.trigger === timelineContainer)) {
+         trigger.kill();
+       }
+    });
+
+    if (timelineContainer && timelineDots.length > 0) {
+      try {
+        gsap.from(timelineDots, {
+          scrollTrigger: {
+            trigger: timelineContainer,
+            start: 'top 80%',
+          },
+          scale: 0,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.2,
+          ease: 'back.out(1.7)'
+        });
+        console.log("GSAP animation initialized successfully");
+      } catch (e) {
+        console.error("GSAP animation initialization failed:", e);
+      }
+    }
+  }
+
+  // Run on initial load
+  initTimelineAnimation();
+
+  // If using Astro View Transitions
+  document.addEventListener('astro:page-load', initTimelineAnimation);
+</script>

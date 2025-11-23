@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Specialty from '../components/sections/Specialty.astro';
+import Skills from '../components/sections/Skills.astro';
+import Experience from '../components/sections/Experience.astro';
+import Projects from '../components/sections/Projects.astro';
+import Certificates from '../components/sections/Certificates.astro';
+import Contact from '../components/sections/Contact.astro';
+import FooterCTA from '../components/sections/FooterCTA.astro';
+import { t } from '../utils/i18n';
+
+const lang = 'zh-tw';
+---
+
+<Layout title={t('site.title', lang)} description={t('site.description', lang)}>
+  <Hero lang={lang} />
+  <Specialty lang={lang} />
+  <Skills lang={lang} />
+  <Experience lang={lang} />
+  <Projects lang={lang} />
+  <Certificates lang={lang} />
+  <Contact lang={lang} />
+  <FooterCTA lang={lang} />
+</Layout>

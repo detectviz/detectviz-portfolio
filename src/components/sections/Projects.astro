@@ -1,0 +1,148 @@
+---
+import ProjectCard from '../ProjectCard.astro';
+import ProjectModal from '../ProjectModal.astro';
+import { projects } from '../../data/projects';
+import { t } from '../../utils/i18n';
+
+interface Props {
+  lang: string | undefined;
+}
+
+const { lang } = Astro.props;
+
+// Get unique categories
+const categories = ['All', ...new Set(projects.map(p => p.category))];
+const displayedProjects = projects.filter(p => p.display);
+---
+
+<section id="projects" class="py-16 md:py-24 bg-surfaceContainerLow">
+  <div class="max-w-container mx-auto px-6">
+    <div class="mb-12 flex flex-col items-center text-center" data-aos="fade-up">
+      <h2 class="font-heading text-h2 text-onSurface mb-4 tracking-wide">
+        {t('projects.heroTitle', lang)}
+      </h2>
+      <p class="text-onSurfaceVariant font-light tracking-wide max-w-2xl mb-8">
+        {t('projects.heroSubtitle', lang)}
+      </p>
+
+      <!-- Category Filter -->
+      <div class="flex flex-wrap justify-center gap-2 mb-8">
+        {categories.map((category, index) => (
+          <button
+            class={`filter-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 tracking-wide
+              ${index === 0
+                ? 'bg-primary text-onPrimary shadow-md'
+                : 'bg-surfaceContainerHigh text-onSurfaceVariant hover:bg-primary/10'
+              }`}
+            data-category={category}
+          >
+            {category === 'All' ? t('projects.all', lang) : category.split('(')[0].trim()}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="projects-grid">
+      {displayedProjects.map((project, index) => (
+        <div 
+          class="project-item w-full" 
+          data-category={project.category}
+          data-aos="fade-up"
+          data-aos-delay={index * 50}
+        >
+          <ProjectCard {...project} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{displayedProjects.map((project) => <ProjectModal {...project} />)}
+
+<script>
+  // Modal Logic
+  const openModalButtons = document.querySelectorAll(".open-modal-btn");
+  const closeModalButtons = document.querySelectorAll(".close-modal-btn");
+  const modals = document.querySelectorAll(".modal");
+
+  function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.setAttribute("data-visible", "true");
+      document.body.style.overflow = "hidden";
+    }
+  }
+
+  function closeModal(modal) {
+    modal.setAttribute("data-visible", "false");
+    document.body.style.overflow = "";
+  }
+
+  openModalButtons.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      const target = event.currentTarget as HTMLElement;
+      const modalId = target.getAttribute("data-target");
+      if (modalId) openModal(modalId);
+    });
+  });
+
+  closeModalButtons.forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      const target = event.currentTarget as HTMLElement;
+      const modalId = target.getAttribute("data-target");
+      const modal = document.getElementById(modalId || '');
+      if (modal) closeModal(modal);
+    });
+  });
+
+  // Close on click outside
+  modals.forEach((modal) => {
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal(modal as HTMLElement);
+      }
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      const visibleModal = document.querySelector('.modal[data-visible="true"]');
+      if (visibleModal) {
+        closeModal(visibleModal as HTMLElement);
+      }
+    }
+  });
+
+  // Filter Logic
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectItems = document.querySelectorAll('.project-item');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active state
+      filterButtons.forEach(b => {
+        b.classList.remove('bg-primary', 'text-onPrimary', 'shadow-md');
+        b.classList.add('bg-surfaceContainerHigh', 'text-onSurfaceVariant', 'hover:bg-primary/10');
+      });
+      btn.classList.remove('bg-surfaceContainerHigh', 'text-onSurfaceVariant', 'hover:bg-primary/10');
+      btn.classList.add('bg-primary', 'text-onPrimary', 'shadow-md');
+
+      const category = btn.getAttribute('data-category');
+
+      projectItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        const element = item as HTMLElement;
+        
+        if (category === 'All' || category === itemCategory) {
+          element.style.display = 'block';
+          // Re-trigger AOS animation
+          element.classList.remove('aos-animate');
+          setTimeout(() => element.classList.add('aos-animate'), 50);
+        } else {
+          element.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

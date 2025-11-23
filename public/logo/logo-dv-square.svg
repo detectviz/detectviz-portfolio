@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&amp;display=swap');
+
+      .bg-square {
+        fill: #1D1B20;
+      }
+      .dv-text {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 80px;
+        letter-spacing: -0.02em;
+        fill: #CFBDFE;
+      }
+    </style>
+  </defs>
+  <rect width="200" height="200" class="bg-square" rx="12"/>
+  <text x="100" y="135" text-anchor="middle" class="dv-text">DV</text>
+</svg>

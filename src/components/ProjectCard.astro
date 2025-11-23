@@ -1,0 +1,48 @@
+---
+import type { Project } from '../../types/project';
+
+interface Props extends Project {}
+
+const {
+  id,
+  images,
+  title,
+  description,
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
+const coverImage = images && images.length > 0 ? images[0] : '';
+const imagePath = coverImage.startsWith('http') ? coverImage : `${base}/images/projects/${id}/${coverImage}`;
+---
+
+<article class="flex flex-col bg-transparent gap-2 overflow-hidden h-full">
+  <div
+    class="group flex flex-col items-center justify-center rounded-2xl overflow-hidden open-modal-btn relative aspect-video bg-surfaceContainer cursor-pointer shadow-sm hover:shadow-md transition-all duration-300 hover:bg-surfaceContainerHigh"
+    data-target={`modal-${id}`}
+  >
+    {coverImage ? (
+      <img
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        src={imagePath}
+        alt={`Cover of ${title}`}
+        loading="lazy"
+      />
+    ) : (
+      <div class="flex items-center justify-center w-full h-full text-onSurfaceVariant">
+        No Image
+      </div>
+    )}
+    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+  </div>
+
+  <div class="flex flex-col items-start justify-center overflow-hidden mt-2">
+    <h3
+      class="font-heading font-bold text-onSurface text-lg truncate w-full tracking-wide"
+    >
+      {title}
+    </h3>
+    <p class="text-onSurfaceVariant text-sm line-clamp-2 w-full font-light tracking-wide">
+      {description}
+    </p>
+  </div>
+</article>

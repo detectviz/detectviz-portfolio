@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" width="280" height="60">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&amp;display=swap');
+
+      .logo-text {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 40px;
+        letter-spacing: -0.02em;
+      }
+      .detect { fill: #65558f; }
+      .viz { fill: #CFBDFE; }
+    </style>
+  </defs>
+  <text x="0" y="45" class="logo-text">
+    <tspan class="detect">Detect</tspan><tspan class="viz">Viz</tspan>
+  </text>
+</svg>
