@@ -110,12 +110,6 @@ body {
     opacity: 1;
   }
 
-  .skill-level-bar {
-    width: 0;
-    /* Initial width for animation */
-    transition: width 0.8s ease-out;
-  }
-
   .tool-icon {
     transition: transform 0.3s ease, rotate 0.3s ease;
     transform-origin: center;
