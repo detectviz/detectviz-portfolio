@@ -36,49 +36,7 @@
   },
   "skills": {
     "title": "Skills",
-    "subtitle": "掌握多種工具與技術，構建現代化、高效能的系統。",
-    "clusters": {
-      "frontend": {
-        "title": "監控與可觀測性",
-        "description": "Grafana, InfluxDB, Telegraf, Prometheus"
-      },
-      "design": {
-        "title": "開發與自動化",
-        "description": "Golang, Python, Bash, Docker, Kubernetes, CI/CD"
-      },
-      "tools": {
-        "title": "系統與數據",
-        "description": "Linux, AIX, ETL, SQL, NoSQL"
-      },
-      "management": {
-        "title": "管理與協作",
-        "description": "結構化流程、高效工作流與團隊協作。"
-      }
-    },
-    "category": {
-      "design": "設計",
-      "coding": "開發",
-      "framework": "框架",
-      "deployment": "部署"
-    },
-    "astro": {
-      "description": "靜態網站生成與效能"
-    },
-    "react": {
-      "description": "互動式組件與 UI"
-    },
-    "tailwind": {
-      "description": "實用優先樣式與設計"
-    },
-    "typescript": {
-      "description": "型別安全開發"
-    },
-    "git": {
-      "description": "版本控制與協作"
-    },
-    "vercel": {
-      "description": "部署與託管"
-    }
+    "subtitle": "掌握多種工具與技術，構建現代化、高效能的系統。"
   },
   "projects": {
     "pageTitle": "專案",
@@ -94,12 +52,6 @@
     },
     "title": "精選專案",
     "subtitle": "展示具代表性的企業級專案與個人作品。",
-    "astroPortfolio": {
-      "shortDescription": "現代化、多語系的作品集模板，使用 Astro 和 Tailwind CSS 構建。",
-      "challenge": "創建一個高效能、多語系的作品集模板，易於客製化。",
-      "approach": "使用 Astro 實現最佳效能，基於 JSON 的內容管理。",
-      "result": "Lighthouse 評分 100/100，完全響應式，支援多語系。"
-    },
     "buttonText": "查看 GitHub",
     "allProjectsButtonText": "查看所有專案",
     "all": "全部專案"
@@ -134,7 +86,7 @@
     "phoneTitle": "電話",
     "phoneButtonText": "撥打電話",
     "githubTitle": "GitHub",
-    "githubButtonText": "查看 Profile",
+    "githubButtonText": "查看 GitHub",
     "linkedinTitle": "LinkedIn",
     "linkedinButtonText": "連結 LinkedIn"
   },

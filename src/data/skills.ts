@@ -25,8 +25,8 @@ export const skillClusters: SkillCluster[] = [
     title: 'Programming Languages',
     tools: [
       { name: 'Golang', icon: '/icons/golang.svg' },
-      { name: 'Shell', icon: '/icons/shell.svg' },
-      { name: 'Python', icon: '/icons/python.svg' }
+      { name: 'Python', icon: '/icons/python.svg' },
+      { name: 'Shell', icon: '/icons/shell.svg' }
     ]
   },
   {
