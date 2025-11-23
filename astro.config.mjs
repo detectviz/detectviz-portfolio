@@ -49,39 +49,5 @@ export default defineConfig({
     ssr: {
       external: ['aos']
     }
-  },
-
-  // Add cache headers for static assets
-  headers: {
-    '/_astro/*': [
-      {
-        key: 'Cache-Control',
-        value: 'public, max-age=31536000, immutable'
-      }
-    ],
-    '/assets/*': [
-      {
-        key: 'Cache-Control',
-        value: 'public, max-age=31536000, immutable'
-      }
-    ],
-    '/*.css': [
-      {
-        key: 'Cache-Control',
-        value: 'public, max-age=31536000, immutable'
-      }
-    ],
-    '/*.js': [
-      {
-        key: 'Cache-Control',
-        value: 'public, max-age=31536000, immutable'
-      }
-    ],
-    '/*.webp': [
-      {
-        key: 'Cache-Control',
-        value: 'public, max-age=31536000, immutable'
-      }
-    ]
   }
 });

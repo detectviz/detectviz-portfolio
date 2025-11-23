@@ -30,9 +30,3 @@ export function t(key: string, lang: string | undefined): string {
   }
   return value;
 }
-
-// Utility to get all translations for a specific language
-export function getTranslations(lang: string | undefined) {
-  const currentLang = lang || 'zh-tw';
-  return translations[currentLang as keyof typeof translations] || translations['zh-tw'];
-}

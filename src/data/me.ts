@@ -1,5 +1,4 @@
 export const name = "Zoe Lin";
-export const homepage_url = "https://detectviz.com/";
 export const linkedin_username = "bigdata-zoelin";
 export const github_username = "detectviz";
 
@@ -24,19 +23,10 @@ export const github_username = "detectviz";
  \============================================================================*/
 // zoe.lin@detectviz.com encoded in base64
 const email_base64_encoded = "em9lLmxpbkBkZXRlY3R2aXouY29t";
-const phone_base64_encoded = "";
-
-// The address fields below are for the privacy policy. They are also Base64 encoded.
-const address_line_1_base64_encoded = "MTIzIE1haW4gU3Q=";
-const address_line_2_base64_encoded = "V2FzaGluZ3RvbiwgREM=";
 
 // The data is decoded and exported below. Do not edit below this line.
 export const email = atob(email_base64_encoded);
-export const phone = atob(phone_base64_encoded);
-export const address_line_1 = atob(address_line_1_base64_encoded);
-export const address_line_2 = atob(address_line_2_base64_encoded);
 
 // Helper code for creating URLs from the above data.
-export const linkedin_short = `linkedin.com/in/${linkedin_username}`;
 export const linkedin_url   = `https://www.linkedin.com/in/${linkedin_username}`;
 export const github_url = `https://github.com/${github_username}`;
