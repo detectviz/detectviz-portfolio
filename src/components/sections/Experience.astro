@@ -27,21 +27,32 @@ const timelineItems = ["item1", "item2", "item3"];
       <div class="space-y-12">
         {timelineItems.map((item, index) => (
           <div
-            class={`relative flex flex-col md:flex-row gap-8 md:gap-0 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+            class={`relative flex flex-col md:flex-row gap-8 md:gap-0`}
             data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}
           >
-            {/* Timeline dot - Added class="timeline-dot" */}
-            <div class="timeline-dot absolute left-0 md:left-1/2 top-0 w-5 h-5 rounded-full bg-primary border-4 border-surface transform -translate-x-2 md:-translate-x-2.5"></div>
+            {/* Timeline dot */}
+            <div class="timeline-dot absolute left-0 md:left-1/2 top-0 w-5 h-5 rounded-full bg-primary border-4 border-surface transform -translate-x-2 md:-translate-x-2.5 z-10"></div>
 
-            <!-- Content -->
-            <div class="md:w-1/2 pl-10 md:pl-0 md:pr-12 md:text-right">
-              <h3 class="font-heading text-xl text-onSurface mb-1 tracking-wide">{t("timeline." + item + "Title", lang)}</h3>
-              <p class="text-sm text-primary mb-2 tracking-wide">{t("timeline." + item + "Period", lang)}</p>
-              <p class="text-onSurfaceVariant whitespace-pre-line font-light tracking-wide">{t("timeline." + item + "Description", lang)}</p>
+            {/* Left Side (Content for Even, Empty for Odd) */}
+            <div class={`md:w-1/2 pl-10 md:pl-0 md:pr-12 ${index % 2 === 0 ? 'md:text-right' : ''}`}>
+              {index % 2 === 0 && (
+                <>
+                  <h3 class="font-heading text-xl text-onSurface mb-1 tracking-wide">{t("timeline." + item + "Title", lang)}</h3>
+                  <p class="text-sm text-primary mb-2 tracking-wide">{t("timeline." + item + "Period", lang)}</p>
+                  <p class="text-onSurfaceVariant whitespace-pre-line font-light tracking-wide">{t("timeline." + item + "Description", lang)}</p>
+                </>
+              )}
             </div>
 
-            <div class="md:w-1/2 md:pl-12">
-              <!-- Empty div to create the layout on alternating sides -->
+            {/* Right Side (Content for Odd, Empty for Even) */}
+            <div class={`md:w-1/2 pl-10 md:pl-12 ${index % 2 !== 0 ? 'md:text-left' : ''}`}>
+               {index % 2 !== 0 && (
+                <>
+                  <h3 class="font-heading text-xl text-onSurface mb-1 tracking-wide">{t("timeline." + item + "Title", lang)}</h3>
+                  <p class="text-sm text-primary mb-2 tracking-wide">{t("timeline." + item + "Period", lang)}</p>
+                  <p class="text-onSurfaceVariant whitespace-pre-line font-light tracking-wide">{t("timeline." + item + "Description", lang)}</p>
+                </>
+              )}
             </div>
           </div>
         ))}
