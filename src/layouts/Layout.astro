@@ -58,14 +58,6 @@ const {
     {/* <meta name="twitter:site" content="@yourtwitterhandle"> */} {/* Optional: if you have a Twitter handle */}
     {/* <meta name="twitter:creator" content="@yourtwitterhandle"> */} {/* Optional: if you have a Twitter handle */}
 
-    <!-- Hreflang links -->
-    {/* For the default locale (en) */}
-    <link rel="alternate" hreflang="en" href={new URL(Astro.url.pathname.replace('/zh-tw/', '/'), Astro.site!).href.replace('/zh-tw', '')} />
-    {/* For the Traditional Chinese locale */}
-    <link rel="alternate" hreflang="zh-tw" href={new URL('/zh-tw' + Astro.url.pathname.replace('/zh-tw/', '/'), Astro.site!).href} />
-    {/* x-default */}
-    <link rel="alternate" hreflang="x-default" href={new URL(Astro.url.pathname.replace('/zh-tw/', '/'), Astro.site!).href.replace('/zh-tw', '')} />
-
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,18 +67,6 @@ const {
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "url": Astro.site!.href,
-      "name": t('site.title', lang),
-      "alternateName": "Portfolio Website",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": `${Astro.site!.href}search?q={search_term_string}`,
-        "query-input": "required name=search_term_string"
-      }
-    })} />
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Person",
