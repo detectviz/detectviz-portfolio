@@ -6,10 +6,19 @@ export function initializeTheme() {
   const applyTheme = () => {
     const userTheme = localStorage.getItem('theme');
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (userTheme === 'dark' || (!userTheme && systemTheme)) {
+    // Default to dark theme if no user preference is set
+    if (userTheme === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else if (userTheme === 'dark' || !userTheme) {
+      // Apply dark theme if explicitly set to 'dark' or no preference exists
       document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.classList.remove('dark');
+      // Fallback to system preference if userTheme is somehow invalid
+      if (systemTheme) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     }
   };
 

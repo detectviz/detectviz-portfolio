@@ -36,6 +36,9 @@
     "subtitle": "掌握多種工具與技術，構建現代化、高效能的系統。"
   },
   "projects": {
+    "heroTitle": "Projects",
+    "heroSubtitle": "展示具代表性的企業級專案與個人作品",
+    "all": "全部",
     "title": "精選專案",
     "subtitle": "展示具代表性的企業級專案與個人作品。",
     "buttonText": "查看 GitHub"
