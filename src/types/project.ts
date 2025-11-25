@@ -10,4 +10,5 @@ export interface Project {
   display: boolean;
   category: string;
   links?: { url: string; name: string }[];
+  period?: string;
 }

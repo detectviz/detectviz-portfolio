@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "DetectViz - 作品集",
-    "description": "DetectViz 的專業作品集網站，展示 SRE、數據工程與可觀測性領域的專案經驗與技術能力。"
+    "description": "DetectViz 的專業作品集網站，展示 SRE、平台工程 (Platform Engineering) 與可觀測性領域的實戰經驗。"
   },
   "nav": {
     "about": "About",
@@ -13,13 +13,13 @@
   "hero": {
     "greeting": "你好，我是",
     "name": "林宜欣",
-    "role": "SRE / 數據工程師",
+    "role": "SRE / 平台工程師",
     "ctaAbout": "關於我"
   },
   "about": {
     "title": "關於我",
-    "paragraph1": "具備 3 年軟體開發與 SRE 實戰經驗，從零到一打造並導入了企業級的自動化監控平台。我熱衷於運用開源軟體 (如 Grafana Stack, CNCF 項目) 來設計與建構高可用性、可擴展的基礎設施，並將設計背景的視覺化思維，應用於打造直觀、易讀的 Grafana 儀表板，深信好的工具與設計能讓數據自己說話。",
-    "paragraph2": "比起從頭造輪子，我更享受站在巨人的肩膀上，透過整合、優化現有的開源解決方案，為團隊帶來最高的價值。我具備獨立完成專案迭代的能力，從腳本開發、CI/CD 部署到收集用戶反饋，持續優化，確保系統的高可用性與維運效率。"
+    "paragraph1": "擁有 3 年軟體開發與 SRE 實戰經驗，專注於平台工程 (Platform Engineering)、時間序列資料庫 (TSDB) 與可觀測性領域。曾主導從零到一開發企業級自動化監控平台，成功導入台積電、台泥儲能等大型企業。我擅長運用 Golang 與開源生態系 (Grafana Stack, CNCF) 建構高可用性基礎設施，並結合設計背景的視覺化思維，打造讓數據「說話」的直觀儀表板。",
+    "paragraph2": "比起重複造輪子，我更秉持「站在巨人的肩膀上」的理念——透過整合與優化現有開源解決方案，為團隊創造最大價值。我具備全流程開發能力，從架構設計、Golang 工具開發、CI/CD 自動化部署到 GitOps 實踐，致力於提升系統的穩定性與開發者的交付效率。"
   },
   "values": {
     "title": "Specialty",
@@ -27,9 +27,9 @@
     "card1Title": "技術與設計雙重專長",
     "card1Text": "3 年 SRE/數據工程經驗 + 設計背景，將視覺化思維應用於打造直觀、易讀的 Grafana 儀表板。",
     "card2Title": "開源優先思維",
-    "card2Text": "活用 Grafana Stack、CNCF 等開源工具，設計高可用性、可擴展的基礎設施。",
-    "card3Title": "量化成果展示",
-    "card3Text": "每日數億筆數據處理、50+ 儀表板設計、80% 效能提升，讓數據自己說話。"
+    "card2Text": "活用 Grafana Stack 與 CNCF 生態系，實踐 GitOps 與 IaC，建構現代化的高可用性基礎設施。",
+    "card3Title": "量化成果與影響力",
+    "card3Text": "每日數億筆數據處理、50+ 套標準化儀表板、提升 80% 交付效率，並確保 99.9% 系統可用性。"
   },
   "skills": {
     "title": "Skills",
@@ -48,7 +48,7 @@
     "subtitle": "我的職業生涯與重要里程碑。",
     "item1Title": "數據工程師",
     "item1Period": "2022/04 ~ 2025/04",
-    "item1Description": "集先鋒科技有限公司\n主導 Grafana Stack 監控平台設計\n從零到一打造企業級自動化監控平台",
+    "item1Description": "集先鋒科技有限公司\n主導企業級監控平台開發 (Golang/InfluxDB)\n設計 Agentless 架構解決異質環境採集難題\n導入 GitOps 流程提升維運效率",
     "item2Title": "視覺設計師",
     "item2Period": "2019/08 ~ 2021/06",
     "item2Description": "三越彩繪標示工程有限公司\n參與長庚醫院與台塑集團標示系統規劃",
