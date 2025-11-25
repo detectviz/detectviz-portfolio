@@ -214,6 +214,26 @@ export const projects: Project[] = [
     display: true
   },
   {
+    id: 'cht-apache',
+    period: '2022/06 ~ 2022/07',
+    title: '電信影音平台 Apache Log 分析',
+    category: '數據整合 (Data Pipeline Engineering)',
+    images: [
+      'cht-apache-flowchart.png',
+      'cht-apache-performance.png',
+      'cht-apache-errors.png',
+      'cht-apache-ip.png',
+      'cht-apache-method.png'
+    ],
+    technologies: [
+      { name: 'ELK', icon: 'elastic' },
+      { name: 'Apache', icon: 'linux' }
+    ],
+    description: '針對每日 3,000 萬筆 Apache Log 的深度分析與視覺化監控',
+    content: '針對電信影音平台 (VSM APs) 每日高達 3,000 萬筆的 Apache Access Log，導入 Elastic Stack (ELK) 進行大數據分析。透過 Logstash 建立高效的資料清洗與標準化 Pipeline，將非結構化日誌轉為可查詢的指標數據存入 Elasticsearch。利用 Kibana 建置多維度視覺化儀表板，實時監控使用者地理分佈、HTTP 狀態碼與回應時間。成功識別 Top N 慢速 API 與異常連線行為，為系統優化與流量調度提供強而有力的數據支持。',
+    display: true
+  },
+  {
     id: 'ntu-influxdb-grafana-training',
     period: '2023/07',
     title: '國立臺灣大學 InfluxDB &\nGrafana 技術研討會',
