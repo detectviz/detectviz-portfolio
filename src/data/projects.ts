@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: 'ipoc-platform',
     period: '2022/04 ~ 2025/04',
     title: '企業級自動化效能監控平台開發',
-    category: '平台開發 (Software & Platform Engineering)',
+    category: '平台開發',
     images: [
       'ipoc-platform-flowchart.png',
       'ipoc-sysload-overview.png',
@@ -25,14 +25,14 @@ export const projects: Project[] = [
       { name: 'Keycloak', icon: 'keycloak' }
     ],
     description: '從零到一主導開發的企業級自動化監控平台',
-    content: '針對企業 IT 環境異質性與數據孤島痛點，主導開發企業級自動化效能監控平台。克服每日數億筆時序數據處理與跨平台 (AIX/Windows/Linux) 採集挑戰。採用 Agentless 架構大幅降低部署成本，並運用 Golang 高併發特性優化 ETL 效能。成功導入台泥儲能等 10+ 重點客戶，建立 50+ 套標準化儀表板，提升交付效率 80% 並維持 99.9% 系統可用性。',
+    content: '針對企業 IT 環境異質性與數據孤島痛點，負責開發企業級自動化效能監控平台。克服每日數億筆時序數據處理與跨平台 (AIX/Windows/Linux) 採集挑戰。採用非侵入式架構大幅降低部署成本，並運用 Golang 高併發特性優化 ETL 效能。成功導入台泥儲能等 10+ 重點客戶，建立 50+ 套標準化儀表板，提升交付效率 80% 並維持 99.9% 系統可用性。',
     display: true
   },
   {
     id: 'tsmc-pdu-monitor',
     period: '2022/11 ~ 2025/04',
-    title: '台積電資料中心 PDU 電力監控系統',
-    category: '平台開發 (Software & Platform Engineering)',
+    title: '台積電機房基礎設施與電力監控系統',
+    category: '平台開發',
     images: [
       'tsmc-pdu-monitor-flowchart.png',
       'tsmc-pdu-monitor-spc-by-pdu.png',
@@ -49,15 +49,15 @@ export const projects: Project[] = [
       { name: 'Modbus', icon: 'modbus' },
       { name: 'Bash', icon: 'shell' }
     ],
-    description: '為台積電打造的集中化 PDU 電力監控系統',
-    content: '為滿足台積電資料中心對電力穩定性的高標準要求，整合數百支異質 PDU (SNMP/Modbus) 數據。設計從 Room 到 Branch 的 5 層式階層架構，並開發客製化 Grafana 儀表板。系統具備即時負載追蹤與三相不平衡偵測功能，協助維運團隊主動識別潛在風險，顯著提升機房營運穩定性與管理效率。',
+    description: '整合 PDU、電盤與網路設備的機房全方位監控系統',
+    content: '為滿足台積電機房對基礎設施穩定性的高標準要求，整合 PDU、Panel、Switch 與 AP 等數千台設備 (SNMP/Modbus/PLC) 數據。設計從 Room 到 Branch 的 5 層式階層架構，並開發客製化 Grafana 儀表板。系統具備即時電力負載追蹤、三相不平衡偵測及網路狀態監控功能，協助維運團隊主動識別潛在風險，顯著提升機房營運穩定性與管理效率。',
     display: true
   },
   {
     id: 'tcci-influxdb-redis',
     period: '2024/07 ~ 2024/09',
     title: '台泥儲能高可用性 InfluxDB 監控架構',
-    category: '平台開發 (Software & Platform Engineering)',
+    category: '平台開發',
     images: [
       'tcci-influxdb-redis-flowchart.png',
       'tcci-influxdb-redis-dashboard.png'
@@ -69,14 +69,14 @@ export const projects: Project[] = [
       { name: 'Golang', icon: 'golang' }
     ],
     description: '基於 InfluxDB 與 Redis 緩衝架構的高可用性監控平台',
-    content: '針對台泥儲能對金融級數據完整性的嚴格要求，建置高可用 (HA) 監控平台。為解決網路不穩導致的數據遺失風險，設計以 Redis Stream 為核心的緩衝機制 (Buffer Mechanism)，並以 Golang 開發 redis2influx 服務確保數據寫入的可靠性。成功交付一套零資料遺失 (Zero Data Loss)、具備彈性容錯能力的監控架構。',
+    content: '針對台泥儲能對金融級數據完整性的嚴格要求，建置高可用監控平台。為解決網路不穩導致的數據遺失風險，設計以 Redis Stream 為核心的緩衝機制，並以 Golang 開發 redis2influx 服務確保數據寫入的可靠性。成功交付一套確保數據完整性、具備彈性容錯能力的監控架構。',
     display: true
   },
   {
     id: 'innolux-influxdb-platform',
     period: '2024/09 ~ 2024/11',
     title: '大規模工業物聯網 (IIoT) 數據整合平台',
-    category: '平台開發 (Software & Platform Engineering)',
+    category: '平台開發',
     images: [
       'innolux-influxdb-evaluation-flowchart.png',
       'innolux-influxdb-evaluation-remote-write-request.png',
@@ -90,14 +90,14 @@ export const projects: Project[] = [
       { name: 'Prometheus', icon: 'prometheus' }
     ],
     description: '針對大規模工業物聯網數據的 InfluxDB 架構設計與壓力測試',
-    content: '為驗證 InfluxDB 處理大規模 IIoT 數據的極限，主導科技廠房 PoC 專案。挑戰在於精準模擬數萬個 Sensor 的高併發寫入場景。自主開發支援多模式與重試機制的 Golang 壓力測試工具，取代制式方案。透過 Grafana 建立完整觀測體系 (Write Request/Error Count)，成功量化系統極限與延遲表現，為客戶提供具數據支撐的容量規劃與架構優化建議。',
+    content: '為規劃 InfluxDB 建置規格，主導科技廠房 PoC 專案。挑戰在於精準模擬數萬個 Sensor 的高併發寫入場景。自主開發 Golang 壓力測試工具，根據資料保留期限 (Retention Policy) 與採集頻率設定，精準估算磁碟容量需求。透過 Grafana 建立完整觀測體系，量化 CPU 與 RAM 的消耗率，為客戶提供具數據支撐的容量規劃 (Capacity Planning) 與架構優化建議。',
     display: true
   },
   {
     id: 'his-monitor-platform',
     period: '2023/06 ~ 2023/12',
     title: '醫療資訊系統 (HIS) 全端可觀測性平台',
-    category: '數據整合 (Data Pipeline Engineering)',
+    category: '數據整合',
     images: [
       'his-monitor-flowchart.png',
       'his-server-monitor-windows-and-linux.png',
@@ -116,14 +116,14 @@ export const projects: Project[] = [
       { name: 'Grafana', icon: 'grafana' }
     ],
     description: '整合 5 種作業系統與 7 種日誌格式的醫療資訊系統監控方案',
-    content: '面對 HIS 系統複雜的異質環境，需整合 AIX/Windows/Linux 等 5 種作業系統與 Oracle/IIS 服務。克服 NMON, AWR 等 7 種日誌格式標準化難題。開發自動化 ETL 腳本清洗數據並寫入 InfluxDB，建立 10+ 張跨層次關聯分析儀表板。成功識別磁碟耗盡、備份異常等 20+ 項關鍵隱憂，實現從基礎設施到應用層 (OS to Application) 的端到端可觀測性。',
+    content: '面對 HIS 系統複雜的異質環境，需整合 AIX/Windows/Linux 等 5 種作業系統與 Oracle/IIS 服務。克服 NMON, AWR 等 7 種日誌格式標準化難題。開發自動化 ETL 腳本清洗數據並寫入 InfluxDB，建立 10+ 張跨層次關聯分析儀表板。成功識別磁碟耗盡、備份異常等 20+ 項關鍵隱憂，實現從基礎設施到應用層的端到端可觀測性。',
     display: true
   },
   {
     id: 'wiadvance-db-monitor',
     period: '2023/01 ~ 2023/06',
     title: 'Oracle & SQL Server 雙資料庫健檢平台',
-    category: '數據整合 (Data Pipeline Engineering)',
+    category: '數據整合',
     images: [
       'wiadvance-db-monitor-flowchart.png',
       'wiadvance-oracle-overview.png',
@@ -141,7 +141,7 @@ export const projects: Project[] = [
       { name: 'Telegraf', icon: 'influxdb' }
     ],
     description: '與緯謙科技合作的雙資料庫健檢平台，實現非侵入式監控',
-    content: '與緯謙科技合作，為 OCI 客戶打造 Oracle 與 SQL Server 雙資料庫健檢服務。在嚴格的資安規範下，設計 FTP chroot 隔離機制與自動化日誌解析引擎，整合 Telegraf 實現非侵入式 (Agentless) 監控。將晦澀的 AWR 報告與效能計數器轉化為直觀的 Top SQL 與 Wait Events 儀表板，賦予客戶 DBA 等級的數據洞察能力，有效提升資料庫效能診斷效率。',
+    content: '與緯謙科技合作，為 OCI 客戶打造 Oracle 與 SQL Server 雙資料庫健檢服務。在嚴格的資安規範下，建立統一的 FTP 上傳管道與集中處理機制，並整合自動化日誌解析引擎，實現非侵入式 (Agentless) 監控。將晦澀的 AWR 報告與效能計數器轉化為直觀的 Top SQL 與 Wait Events 儀表板，賦予客戶 DBA 等級的數據洞察能力，有效提升資料庫效能診斷效率。',
     links: [
       { url: 'https://www.wiadvance.com/solutions-article/database-monitoring-BiMAP-iPOC/', name: '異業合作連結' }
     ],
@@ -151,7 +151,7 @@ export const projects: Project[] = [
     id: 'cathaybk-influxdb-healthcheck',
     period: '2023/10 ~ 2023/11',
     title: '國泰金控 InfluxDB 效能調校與容量規劃',
-    category: '效能分析 (Performance Engineering)',
+    category: '效能分析',
     images: [
       'cathaybk-influxdb-tuning-flowchart.png',
       'cathaybk-influxdb-tuning-bucket-size-total.png',
@@ -172,8 +172,8 @@ export const projects: Project[] = [
   {
     id: 'newa-informix-healthcheck',
     period: '2023/12 ~ 2024/01',
-    title: '核心系統 AIX & Informix\n深度效能診斷',
-    category: '效能分析 (Performance Engineering)',
+    title: '核心系統 AIX & Informix 效能診斷',
+    category: '效能分析',
     images: [
       'newa-aix-informix-flowchart.png',
       'newa-aix-process.png',
@@ -194,7 +194,7 @@ export const projects: Project[] = [
     id: 'alpha-pure-storage-performance',
     period: '2024/07 ~ 2024/08',
     title: 'Pure Storage 儲存效能驗證與壓力測試',
-    category: '效能分析 (Performance Engineering)',
+    category: '效能分析',
     images: [
       'alpha-pure-storage-flowchart.png',
       'alpha-topsql-system-metrics.png',
@@ -210,14 +210,14 @@ export const projects: Project[] = [
     ],
     description: '儲存系統升級前後的效能驗證與壓力測試報告',
 
-    content: '協助客戶驗證 Pure Storage 升級效益，挑戰在於解釋架構改變導致的硬碟 Busy% 上升現象。透過深度數據分析，證實雖然 Busy% 增加，但讀取吞吐量 (Throughput) 提升 375%、IOPS 提升 39%，成功消除客戶疑慮。進一步執行 dd 與 scp 壓力測試量化 I/O 與網路極限，並據此提出負載分散與備份排程優化的專業建議，確保新系統發揮最大效能。',
+    content: '協助客戶驗證 Pure Storage 升級效益，挑戰在於解釋架構改變導致的硬碟 Busy% 上升現象。透過深度數據分析，證實雖然 Busy% 增加，但讀取吞吐量 (Throughput)、IOPS 則有實質提升，成功消除客戶疑慮。進一步執行 dd 與 scp 壓力測試量化 I/O 與網路極限，並據此提出負載分散與備份排程優化的專業建議，確保新系統發揮最大效能。',
     display: true
   },
   {
     id: 'cht-apache',
     period: '2022/06 ~ 2022/07',
     title: '電信影音平台 Apache Log 分析',
-    category: '數據整合 (Data Pipeline Engineering)',
+    category: '數據整合',
     images: [
       'cht-apache-flowchart.png',
       'cht-apache-performance.png',
@@ -237,7 +237,7 @@ export const projects: Project[] = [
     id: 'ntu-influxdb-grafana-training',
     period: '2023/07',
     title: '國立臺灣大學 InfluxDB &\nGrafana 技術研討會',
-    category: '教育訓練 (Education & Training)',
+    category: '教育訓練',
     images: [
       'ntu-course-flowchart.png',
       'ntu-course-website-info.png',
@@ -253,7 +253,7 @@ export const projects: Project[] = [
     ],
     description: '擔任國立臺灣大學技術研討會講師，教授時序資料庫應用',
 
-    content: '受邀擔任台大計算機中心技術研討會講師，挑戰在 3 小時內帶領 70+ 位學員掌握時序資料庫應用。精心設計涵蓋 TSDB 原理、Telegraf 採集、Flux 查詢到 Grafana 儀表板實作的 8 大模組課程。透過循序漸進的教學與實機演練 (Hands-on Lab)，成功協助學員跨越技術門檻，建立數據視覺化與監控告警的實戰能力，達成技術推廣與知識傳承的目標。',
+    content: '受邀擔任台大計算機中心技術研討會講師，挑戰在 3 小時內帶領 70+ 位學員掌握時序資料庫應用。精心設計涵蓋 TSDB 原理、Telegraf 採集、Flux 查詢到 Grafana 儀表板實作的 8 大模組課程。透過循序漸進的教學與實機演練，成功協助學員跨越技術門檻，建立數據視覺化與監控告警的實戰能力，達成技術推廣與知識傳承的目標。',
     links: [
       { url: 'https://my.ntu.edu.tw/actregister/sessionView.aspx?actID=20232204_04&sesID=3', name: '課程連結' }
     ],
@@ -263,7 +263,7 @@ export const projects: Project[] = [
     id: 'detectviz-twgcb-auto',
     period: '2025/09',
     title: '政府組態基準 (GCB) 自動化合規框架',
-    category: '個人專案 (Side Projects)',
+    category: '個人專案',
     images: [
       'detectviz-twgcb-auto-flowchart.png'
     ],
@@ -282,7 +282,7 @@ export const projects: Project[] = [
     id: 'detectviz-api-tracker',
     period: '2025/10',
     title: 'API Endpoint 演進追蹤與視覺化工具',
-    category: '個人專案 (Side Projects)',
+    category: '個人專案',
     images: [
       'detectviz-api-tracker-flowchart.png',
       'detectviz-api-tracker-dashboard.png',
@@ -303,7 +303,7 @@ export const projects: Project[] = [
     id: 'detectviz-gitops',
     period: '2025/11',
     title: '全流程 GitOps 基礎設施自動化平台',
-    category: '個人專案 (Side Projects)',
+    category: '個人專案',
     images: [
       'detectviz-gitops-flowchart.png'
     ],
@@ -317,7 +317,7 @@ export const projects: Project[] = [
     ],
     description: '整合 Terraform, Ansible, ArgoCD 的全流程 IaC 自動化平台',
 
-    content: '為展示企業級雲原生基礎設施實踐能力，建構從 KVM 虛擬機 (Terraform) 到 Kubernetes (Ansible) 再到應用交付 (Argo CD) 的全流程自動化平台。挑戰在於整合複雜工具鏈與安全機制。實作完整的 GitOps 流程，深度整合 Vault 秘密管理、Keycloak OIDC 認證及 Prometheus/Loki/Tempo 可觀測性堆疊，打造現代化、安全且可觀察的基礎設施範本。',
+    content: '為展示企業級雲原生基礎設施實踐能力，建構從 KVM 虛擬機 (Terraform) 到 Kubernetes (Ansible) 再到應用交付 (Argo CD) 的全流程自動化平台。挑戰在於整合複雜工具鏈與安全機制。實作完整的 GitOps 流程，深度整合 Vault Secret 管理、Keycloak OIDC 認證及 Prometheus/Loki/Tempo 可觀測性堆疊，打造現代化、安全且可觀察的基礎設施範本。',
     repo: 'https://github.com/detectviz/detectviz-gitops',
     display: true
   }
